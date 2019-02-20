@@ -29,8 +29,8 @@ class Spaces extends Component {
         return (
         <Router>
         <div>
-          <p><Link to="/spaces/1">{eachSpace.name}</Link></p>
-          <Route path="/spaces/1" component={SingleSpace}/>
+          <button><Link to={`/spaces/${eachSpace.id}`}>{eachSpace.name}</Link></button>
+          <Route path="/spaces/:id" component={SingleSpace}/>
         </div>
         </Router>
       )});//

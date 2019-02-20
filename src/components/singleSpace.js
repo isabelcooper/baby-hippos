@@ -10,7 +10,9 @@ class SingleSpace extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5000/spaces/1")
+    const { id } = this.props.match.params
+
+    fetch(`http://localhost:5000/spaces/${id}`)
       .then(response => response.json())
       .then(space => {
         this.setState({ space: space[0] });
