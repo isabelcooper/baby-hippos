@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Spaces from "./components/spaces"
+import SingleSpace from "./components/singleSpace"
 
 class App extends Component {
   constructor(props) {
@@ -44,8 +45,20 @@ class App extends Component {
 
   render() {
 
-    return(<div> <Spaces/>
-      </div>)
+    return(
+
+      <div>
+        <h1> All Spaces </h1>
+        <div>
+          <Spaces/>
+        </div>
+        <h1> Idividual Space </h1>
+        <div>
+          <SingleSpace/>
+        </div>
+      </div>
+        )
+
     // const { user } = this.state;
     // const { users } = this.state;
     // // const { spaces } = this.state;
