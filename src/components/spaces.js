@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import SingleSpace from "./singleSpace"
+
 
 class Spaces extends Component {
   constructor(props) {
@@ -23,8 +26,14 @@ class Spaces extends Component {
 
     if (spaces.length !== 0) {
       return spaces.map(eachSpace => {
-        return <p>{eachSpace.name + ": " + eachSpace.description}</p>;
-      });
+        return (
+        <Router>
+        <div>
+          <p><Link to="/spaces/1">{eachSpace.name}</Link></p>
+          <Route path="/spaces/1" component={SingleSpace}/>
+        </div>
+        </Router>
+      )});//
     } else {
       return <p> No Spaces</p>;
     }

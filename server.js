@@ -3,7 +3,6 @@ const express = require("express");
 const compression = require("compression");
 const morgan = require("morgan");
 const path = require("path");
-//const query = require("./src/queries")
 const db = require("./Database/connection")
 
 const normalizePort = port => parseInt(port, 10);
@@ -48,8 +47,3 @@ server.listen(PORT, err => {
   if (err) throw err;
   console.log("Server Started!");
 });
-
-
-
-
-// console.log(db.getUsers())
