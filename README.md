@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Maker's BnB
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+As a USER,
+So that I can use MakersBnB services,
+I want to be able to create an account with a login and password.
+```
+```
+As a HOST,
+So that I can list a property,
+I want to list a new space.
+```
+```
+As a HOST,
+So that I can list all my properties,
+I want to be able to create multiple spaces.
+```
+```
+As a GUEST,
+So I can view all listings,
+I want to be able to view brief descriptions of all properties listed by all hosts.
+```
+```
+As a HOST,
+So I can advertise my property,
+I want to include the property name, description and the price per night in the listing.
+```
+```
+As a GUEST,
+So I can view the details of a listing,
+I want to see a separate detailed page of the property that includes name, description and the price per night.
+```
+```
+As a HOST,
+So I can control availability  of my property,
+I want to be able to specify the dates where the property is available.
+```
+```
+As a GUEST,
+So I can rent a property of my choice,
+I want to be able to request a space for one night.
+```
+```
+As a HOST,
+So I can approve the guest's rental,
+I want to be able to view the guest's request and view their information (and ratings) before confirming or declining their booking.
+```
+```
+As both a HOST and a GUEST,
+So I don't get booking conflicts,
+I want spaces that are already booked for a particular date to show as unavailable and thus cannot be booked more than once.
+```
+```
+As a HOST ,
+So maximise the chance of my property being booked,
+I want to keep the space available until a GUEST has requested to book and I have confirmed the booking.
+```
