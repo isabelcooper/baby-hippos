@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Spaces from "./components/spaces"
+import SpacesContainer from "./components/SpacesContainer"
 import SingleSpace from "./components/singleSpace"
+
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
       <div>
         <h1> All Spaces </h1>
         <div>
-          <Spaces/>
+          <SpacesContainer/>
         </div>
 
 
@@ -24,3 +25,17 @@ class App extends Component {
 } //<< end of class
 
 export default App;
+
+
+//
+// return spaces.map(eachSpace => {
+//   return (
+//   <div>
+//     <Switch>
+//     <button><Link to={`/spaces/${eachSpace.id}`}>{eachSpace.name}</Link></button>
+//
+//     <Route path="/spaces/:id" component={SingleSpace}/>
+//     <Route path="/" component={Spaces}/>
+//     </Switch>
+//   </div>
+// )});
