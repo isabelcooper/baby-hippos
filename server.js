@@ -30,8 +30,8 @@ const dev = app.get("env") !== "production";
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
-app.get('/', db.getUsers)
-app.get('/user/:id', db.getUserById)
+app.get('/users', db.getUsers)
+app.get('/users/:id', db.getUserById)
 
 // app.get('/', function (req, res) {
 //   console.log(db.getUsers(req,res));
