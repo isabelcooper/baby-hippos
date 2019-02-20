@@ -1,5 +1,21 @@
 # Maker's BnB
 
+## Set Up
+1) git clone repo
+2) Install:
+* `npm install node`
+* `npm install express --s`
+3) Run on localhost (default port 5000)
+* `node server.js`
+* Visit localhost:5000
+4) COLLABORATORS ONLY:
+* push changes to github master: `git origin push master`
+* Run on prod:
+Push new changes: `git heroku push master`
+Visit: https://babyhipposmakersbnb.herokuapp.com
+
+## User Stories
+###MVP
 ```
 As a USER,
 So that I can use MakersBnB services,
@@ -20,6 +36,7 @@ As a GUEST,
 So I can view all listings,
 I want to be able to view brief descriptions of all properties listed by all hosts.
 ```
+###Extras
 ```
 As a HOST,
 So I can advertise my property,
