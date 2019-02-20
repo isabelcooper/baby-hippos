@@ -15,7 +15,7 @@ Push new changes: `git heroku push master`
 Visit: https://babyhipposmakersbnb.herokuapp.com
 
 ## User Stories
-###MVP
+### MVP
 ```
 As a USER,
 So that I can use MakersBnB services,
@@ -36,7 +36,7 @@ As a GUEST,
 So I can view all listings,
 I want to be able to view brief descriptions of all properties listed by all hosts.
 ```
-###Extras
+### Extras
 ```
 As a HOST,
 So I can advertise my property,
