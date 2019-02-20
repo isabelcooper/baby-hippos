@@ -3,7 +3,8 @@ const express = require("express");
 const compression = require("compression");
 const morgan = require("morgan");
 const path = require("path");
-const db = require("./src/queries")
+//const query = require("./src/queries")
+const db = require("./Database/connection")
 
 const normalizePort = port => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || 5000)
@@ -32,26 +33,8 @@ app.use(bodyParser.json())
 
 app.get('/users', db.getUsers)
 app.get('/users/:id', db.getUserById)
-
-// app.get('/', function (req, res) {
-//   console.log(db.getUsers(req,res));
-//   //
-//   // users = db.getUsers(req,res);
-//   // console.log(users);
-//   //
-//   // res.send(users)
-//
-//   res.status(200).json(db.getUsers(req,res))
-//
-// //   res.send([{
-// // 	"id": 1,
-// // 	"email": "admin",
-// // 	"password": "password"
-// // }])
-//   // res.sendFile(path.resolve(__dirname, "build", "index.html"));
-// });
-
-// app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/spaces', db.getSpaces)
+app.get('/spaces/:id', db.getSpaceById)
 
 //
 // app.get("*", (req, res) => {

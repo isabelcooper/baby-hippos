@@ -6,6 +6,7 @@
 * `npm install node`
 * `npm install express --s`
 3) Run on localhost (default port 5000)
+* `npm run-script build`
 * `node server.js`
 * Visit localhost:5000
 4) COLLABORATORS ONLY:
