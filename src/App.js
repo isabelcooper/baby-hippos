@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { BrowserRouter as Switch, Router, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import SpacesContainer from "./components/SpacesContainer";
-import SingleSpace from "./components/singleSpace";
+import SpacesContainer from "./components/SpacesContainer"
 import Login from "./components/login";
+
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +24,7 @@ class App extends Component {
             />
           </div>
         </Switch>
+
       </div>
     );
   } // << end of render

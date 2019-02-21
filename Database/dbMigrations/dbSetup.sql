@@ -13,8 +13,7 @@ CREATE TABLE users (
       PRIMARY KEY (id),
       FOREIGN KEY (host) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE);
 
-
-      CREATE TABLE bookin (
+CREATE TABLE booking (
         id SERIAL,
         name VARCHAR(280),
         description VARCHAR(280),

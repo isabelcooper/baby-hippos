@@ -8,6 +8,7 @@
 3) Run on localhost (default port 5000)
 * `npm run-script build`
 * `node server.js`
+* `npm install react-router-dom`
 * Visit localhost:5000
 4) COLLABORATORS ONLY:
 * push changes to github master: `git origin push master`

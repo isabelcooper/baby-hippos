@@ -26,8 +26,18 @@ class SingleSpace extends Component {
     if (space != []) {
       return (
         <div>
+            <h3>Name:</h3>
             <p>{space.name}</p>
+            <h3>Description:</h3>
             <p>{space.description}</p>
+            <h3>Price Per Night:</h3>
+            <p>£{space.ppn}</p>
+            <h3>Location:</h3>
+            <p>{space.location}</p>
+            <h3>Bedrooms:</h3>
+            <p>{space.bedrooms}</p>
+            <h3>Beds:</h3>
+            <p>{space.beds}</p>
         </div>
       );
     }

@@ -35,6 +35,7 @@ app.get('/users/:id', db.getUserById)
 app.get('/spaces', db.getSpaces)
 app.get('/spaces/:id', db.getSpaceById)
 app.get('/users/login/:email', db.getUserByEmail)
+app.post('/spaces/new', db.createSpace)
 
 //
 // app.get("*", (req, res) => {
