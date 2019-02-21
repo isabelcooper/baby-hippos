@@ -37,7 +37,7 @@ const getUserById = (request, response) => {
 }
 
 const getSpaces = (request, response) => {
-  pool.query('SELECT * FROM properties', (error, results) => {
+  pool.query('SELECT * FROM spaces', (error, results) => {
     if (error) {
       throw error
     }
@@ -47,7 +47,7 @@ const getSpaces = (request, response) => {
 
 const getSpaceById = (request, response) => {
   const id = parseInt(request.params.id)
-  pool.query(`SELECT * FROM properties WHERE id = ${id}`, (error, results) => {
+  pool.query(`SELECT * FROM spaces WHERE id = ${id}`, (error, results) => {
     if (error) {
       throw error
     }
@@ -56,9 +56,16 @@ const getSpaceById = (request, response) => {
 }
 
 const createSpace = (request, response) => {
-  const { name, description } = request.body
-  
-  pool.query(`INSERT INTO properties (name, description) VALUES ('${name}', '${description}')`, (error, results) => {
+  const { name, description, ppn, location, bedrooms, beds } = request.body
+
+  pool.query(`INSERT INTO spaces (name, description, ppn, location, bedrooms, beds) VALUES (
+    '${name}',
+    '${description}',
+    '${ppn}',
+    '${location}',
+    '${bedrooms}',
+    '${beds}')`,
+    (error, results) => {
     if (error) {
       throw error
     }

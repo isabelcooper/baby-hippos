@@ -16,7 +16,11 @@ class NewSpace extends Component {
     event.preventDefault()
     var data = {
       name: this.state.name,
-      description: this.state.description
+      description: this.state.description,
+      ppn: this.state.ppn,
+      location: this.state.location,
+      bedrooms: this.state.bedrooms,
+      beds: this.state.beds
     }
     fetch(`http://localhost:5000/spaces/new`, {
       method: 'POST',
@@ -38,6 +42,14 @@ class NewSpace extends Component {
                 <input type="text" onChange={this.logChange} name='name'/>
             <label>Description</label>
                 <input type="text" onChange={this.logChange} name='description'/>
+            <label>Price Per Night</label>
+                <input type="text" onChange={this.logChange} name='ppn'/>
+            <label>Location</label>
+                <input type="text" onChange={this.logChange} name='location'/>
+            <label>Bedrooms</label>
+                <input type="text" onChange={this.logChange} name='bedrooms'/>
+            <label>Beds</label>
+                <input type="text" onChange={this.logChange} name='beds'/>
             <input type="submit" value="Submit" />
           </form>
         </div>

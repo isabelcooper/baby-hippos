@@ -23,8 +23,10 @@ class Spaces extends Component {
     return spaces.map(eachSpace => {
       return (
         <div>
+          <h1>{eachSpace.name}</h1>
+          <p>{eachSpace.location}</p>
           <button>
-            <Link to={`/spaces/${eachSpace.id}`}>{eachSpace.name}</Link>
+            <Link to={`/spaces/${eachSpace.id}`}>View This Space!</Link>
           </button>
         </div>
       );
