@@ -36,6 +36,17 @@ const getUserById = (request, response) => {
   })
 }
 
+const getUserByEmail = (request, response) => {
+  console.log(request.params.email)
+  const email = request.params.email
+  pool.query('SELECT * FROM users WHERE email = $1', [email], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(200).json(results.rows)
+  })
+}
+
 const getSpaces = (request, response) => {
   pool.query('SELECT * FROM spaces', (error, results) => {
     if (error) {
@@ -48,6 +59,7 @@ const getSpaces = (request, response) => {
 const getSpaceById = (request, response) => {
   const id = parseInt(request.params.id)
   pool.query(`SELECT * FROM spaces WHERE id = ${id}`, (error, results) => {
+
     if (error) {
       throw error
     }
@@ -80,5 +92,6 @@ module.exports = {
   getUserById,
   getSpaces,
   getSpaceById,
-  createSpace
+  createSpace,
+  getUserByEmail
 }

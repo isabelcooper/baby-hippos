@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import { BrowserRouter as Switch, Router, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import SpacesContainer from "./components/SpacesContainer"
-import SingleSpace from "./components/singleSpace"
-import NewSpace from "./components/newSpace"
+import Login from "./components/login";
 
 
 class App extends Component {
@@ -12,23 +12,25 @@ class App extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
-        <h1> All Spaces </h1>
-        <div>
-          <SpacesContainer/>
-        </div>
-        <div>
-          <NewSpace/>
-        </div>
+        <h2> Welcome to the baby hippo thingy</h2>
+        <Switch>
+          <div>
+            <Route exact path="/" component={Login} />
+            <Route
+              path="/spacesContainer"
+              component={SpacesContainer}
+            />
+          </div>
+        </Switch>
 
       </div>
-        )
+    );
   } // << end of render
 } //<< end of class
 
 export default App;
-
 
 //
 // return spaces.map(eachSpace => {
