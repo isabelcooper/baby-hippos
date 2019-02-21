@@ -21,7 +21,7 @@ class App extends Component {
             <Route exact path="/" component={Login} />
             <Route path="/users/new" component={NewUser} />
             <Route
-              path="/spacesContainer"
+              path="/spaces"
               component={SpacesContainer}
             />
           </div>

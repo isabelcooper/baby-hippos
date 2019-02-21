@@ -41,7 +41,7 @@ class Login extends Component {
     const { redirect } = this.state;
 
     if (redirect === true) {
-      return <Redirect to="/spacesContainer" />;
+      return <Redirect to="/spaces" />;
     } else {
       return (
         <div>

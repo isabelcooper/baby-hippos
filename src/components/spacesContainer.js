@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Switch, Router, Route, Link } from "react-router-dom";
 import SingleSpace from "./singleSpace";
 import Spaces from "./spaces";
+import NewSpace from "./newSpace"
 
 class SpacesContainer extends Component {
   render() {
@@ -10,8 +11,12 @@ class SpacesContainer extends Component {
         <h1> All Spaces </h1>
         <Switch>
           <div>
-            <Route exact path="/spacesContainer" component={Spaces} />
+            <Route exact path="/spaces" component={Spaces} />
             <Route path="/spaces/:id" component={SingleSpace} />
+            <Route path="/new" component={NewSpace} />
+            <button>
+              <Link to={`/new`}>Adda Space!</Link>
+            </button>
           </div>
         </Switch>
       </div>

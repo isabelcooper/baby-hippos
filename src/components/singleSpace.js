@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class SingleSpace extends Component {
   constructor(props) {
@@ -10,14 +11,13 @@ class SingleSpace extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params
+    const { id } = this.props.match.params;
 
     fetch(`http://localhost:5000/spaces/${id}`)
       .then(response => response.json())
       .then(space => {
         this.setState({ space: space[0] });
       });
-
   }
 
   render() {
@@ -26,6 +26,7 @@ class SingleSpace extends Component {
     if (space != []) {
       return (
         <div>
+          <div>
             <h3>Name:</h3>
             <p>{space.name}</p>
             <h3>Description:</h3>
@@ -38,11 +39,16 @@ class SingleSpace extends Component {
             <p>{space.bedrooms}</p>
             <h3>Beds:</h3>
             <p>{space.beds}</p>
+          </div>
+          <div>
+            <button>
+              <Link to={'/spaces'}>Back to the spaces!</Link>
+            </button>
+          </div>
         </div>
       );
     }
-
   }
 }
 
-export default SingleSpace
+export default SingleSpace;
