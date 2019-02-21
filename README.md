@@ -73,3 +73,5 @@ As a HOST ,
 So maximise the chance of my property being booked,
 I want to keep the space available until a GUEST has requested to book and I have confirmed the booking.
 ```
+Possible expansions
+* search bar on front page?
