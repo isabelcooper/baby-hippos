@@ -9,6 +9,7 @@ class NewSpace extends Component {
       description: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.logChange = this.logChange.bind(this)
   }
 
   handleSubmit(event) {
@@ -17,12 +18,11 @@ class NewSpace extends Component {
       name: this.state.name,
       description: this.state.description
     }
-    console.log(data)
     fetch(`http://localhost:5000/spaces/new`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
-    }).then(response => response.json())
+    }).then(response => response)
   }//
 
 
@@ -35,9 +35,9 @@ class NewSpace extends Component {
         <div>
           <form onSubmit={this.handleSubmit} method="POST">
             <label>Name</label>
-                <input type="text" onChange={this.logChange} value='' name='name'/>
+                <input type="text" onChange={this.logChange} name='name'/>
             <label>Description</label>
-                <input type="text" onChange={this.logChange} value='' name='description'/>
+                <input type="text" onChange={this.logChange} name='description'/>
             <input type="submit" value="Submit" />
           </form>
         </div>

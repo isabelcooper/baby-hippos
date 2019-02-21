@@ -56,14 +56,13 @@ const getSpaceById = (request, response) => {
 }
 
 const createSpace = (request, response) => {
-  console.log(request)
-  const { name } = request.body.name
-  const { description } = request.body.description
-  pool.query(`INSERT INTO properties (name, description) VALUES (${name}, ${description})`, (error, results) => {
+  const { name, description } = request.body
+  
+  pool.query(`INSERT INTO properties (name, description) VALUES ('${name}', '${description}')`, (error, results) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`Space added with ID: ${result.insertId}`)
+    response.status(201).send(`Submission Successful`)
   })
 }
 
