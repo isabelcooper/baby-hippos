@@ -17,7 +17,6 @@ class Spaces extends Component {
         this.setState({ spaces: spaces });
       });
   }
-
   render() {
     const { spaces } = this.state;
     return spaces.map(eachSpace => {

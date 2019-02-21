@@ -19,7 +19,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Login} />
             <Route
-              path="/spacesContainer"
+              path="/spaces"
               component={SpacesContainer}
             />
           </div>
