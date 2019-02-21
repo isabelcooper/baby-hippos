@@ -34,6 +34,7 @@ app.get('/users', db.getUsers)
 app.get('/users/:id', db.getUserById)
 app.get('/spaces', db.getSpaces)
 app.get('/spaces/:id', db.getSpaceById)
+app.get('/users/login/:email', db.getUserByEmail)
 
 //
 // app.get("*", (req, res) => {

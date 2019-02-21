@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import { BrowserRouter as Switch, Router, Route, Link } from "react-router-dom";
-import SingleSpace from "./singleSpace"
-import Spaces from "./spaces"
-
+import SingleSpace from "./singleSpace";
+import Spaces from "./spaces";
 
 class SpacesContainer extends Component {
-
   render() {
-      return (
+    return (
+      <div>
+        <h1> All Spaces </h1>
         <Switch>
-        <div>
-            <Route exact path="/" component={Spaces}/>
-            <Route path="/spaces/:id" component={SingleSpace}/>
-            </div>
+          <div>
+            <Route exact path="/spacesContainer" component={Spaces} />
+            <Route path="/spaces/:id" component={SingleSpace} />
+          </div>
         </Switch>
-      )}
-    }
+      </div>
+    );
+  }
+}
 
-export default SpacesContainer
+export default SpacesContainer;
