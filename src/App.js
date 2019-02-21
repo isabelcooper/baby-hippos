@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import SpacesContainer from "./components/SpacesContainer"
 import SingleSpace from "./components/singleSpace"
+import NewSpace from "./components/newSpace"
 
 
 class App extends Component {
@@ -17,7 +18,9 @@ class App extends Component {
         <div>
           <SpacesContainer/>
         </div>
-
+        <div>
+          <NewSpace/>
+        </div>
 
       </div>
         )
