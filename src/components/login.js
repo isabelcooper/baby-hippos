@@ -44,23 +44,28 @@ class Login extends Component {
       return <Redirect to="/spacesContainer" />;
     } else {
       return (
-        <form onSubmit={this.handleSubmit}>
-          Email: <br />
-          <input
-            type="text"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          Password: <br />
-          <input
-            type="text"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <input type="submit" value="Submit" />
-        </form>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            Email: <br />
+            <input
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+            Password: <br />
+            <input
+              type="text"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+            <input type="submit" value="Submit" />
+          </form>
+          <button>
+            <Link to={`/users/new`}>Sign Up</Link>
+          </button>
+        </div>
       );
     }
   }

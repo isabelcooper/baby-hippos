@@ -85,6 +85,20 @@ const createSpace = (request, response) => {
   })
 }
 
+const createUser = (request, response) => {
+  const { name, email, password } = request.body
+  console.log(request.body)
+  pool.query(`INSERT INTO users (name, email, password) VALUES (
+    '${name}',
+    '${email}',
+    '${password}')`,
+    (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(201).send(`Submission Successful`)
+  })
+}
 
 
 module.exports = {
@@ -93,5 +107,6 @@ module.exports = {
   getSpaces,
   getSpaceById,
   createSpace,
-  getUserByEmail
+  getUserByEmail,
+  createUser
 }

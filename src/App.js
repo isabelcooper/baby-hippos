@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import SpacesContainer from "./components/SpacesContainer"
 import Login from "./components/login";
+import NewUser from "./components/signUp";
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
         <Switch>
           <div>
             <Route exact path="/" component={Login} />
+            <Route path="/users/new" component={NewUser} />
             <Route
               path="/spacesContainer"
               component={SpacesContainer}
