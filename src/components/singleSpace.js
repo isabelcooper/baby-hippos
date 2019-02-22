@@ -17,15 +17,12 @@ class SingleSpace extends Component {
     fetch(`http://localhost:5000/spaces/${id}`)
       .then(response => response.json())
       .then(space => {
-        console.log(localStorage.getItem("id"));
         this.setState({ space: space[0] });
         fetch(`http://localhost:5000/users/${space[0].host}`)
-        .then(response => response.json())
-        .then(user => {
-          console.log(user)
-          this.setState({ user: user[0] });
-          console.log(this.state)
-        });
+          .then(response => response.json())
+          .then(user => {
+            this.setState({ user: user[0] });
+          });
       });
   }
 
