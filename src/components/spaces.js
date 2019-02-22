@@ -22,13 +22,13 @@ class Spaces extends Component {
     return (
       <div>
         <div>
-          <button>
+          <button class="btn btn-outline-info">
             <Link to={`/new`}>Add a Space!</Link>
           </button>
         </div>
         {spaces.map(eachSpace => {
           return (
-            <div>
+            <div id="eachSpaces">
               <h1>{eachSpace.name}</h1>
               <p>{eachSpace.location}</p>
               <button>

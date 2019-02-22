@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Switch, Router, Route, Link } from "react-router-dom";
-import logo from "./logo.svg";
+import hippo from "./styling/baby-hippo.png";
 import "./App.css";
 import SpacesContainer from "./components/SpacesContainer"
 import Login from "./components/login";
@@ -14,9 +14,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{margin: "50px"}}>
-
-        <h1> Baby Hippo BnB</h1>
+      <div>
         <Switch>
           <div>
             <Route exact path="/" component={Login} />

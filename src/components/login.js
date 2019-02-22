@@ -6,6 +6,7 @@ import {
   Redirect
 } from "react-router-dom";
 import "../styling/lumen-bootstrap.css";
+import hippo from "../styling/baby-hippo.png";
 
 class Login extends Component {
   constructor(props) {
@@ -32,7 +33,11 @@ class Login extends Component {
     fetch(`http://localhost:5000/users/login/${email}`)
       .then(response => response.json())
       .then(user => {
+        console.log("before")
         if (user.length > 0) {
+          console.log("in here")
+          console.log(this.state.password)
+          console.log(user[0].password)
           if (this.state.password === user[0].password) {
             this.setState({ redirect: true });
             localStorage.setItem('id', user[0].id)
@@ -49,7 +54,11 @@ class Login extends Component {
       return <Redirect to="/spaces" />;
     } else {
       return (
-        <div>
+        <div id="login" align="center">
+        <div id="title-div">
+          <h1 id="title"> Baby Hippo BnB</h1><img src={hippo} id="hippo" />
+        </div>
+
           <h2> Log In </h2>
           <form onSubmit={this.handleSubmit}>
             <fieldset>
@@ -68,7 +77,7 @@ class Login extends Component {
                 <input
                   type="password"
                   class="form-control"
-                  id="exampleInputPassword1"
+                  name="password"
                   placeholder="Password"
                   name="password"
                   onChange={this.handleChange}

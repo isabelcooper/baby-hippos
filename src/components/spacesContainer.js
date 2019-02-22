@@ -7,15 +7,18 @@ import NewSpace from "./newSpace";
 class SpacesContainer extends Component {
   render() {
     return (
-      <div>
-        <h1> All Spaces </h1>
-        <Switch>
-          <div>
+      <div id="spacesContainer">
+        <div>
+        <h1 id="spacesTitle">Hippo Spaces</h1>
+        </div>
+          <Switch>
+          <div id ="wrapper">
             <Route exact path="/spaces" component={Spaces} />
             <Route path="/spaces/:id" component={SingleSpace} />
             <Route path="/new" component={NewSpace} />
           </div>
         </Switch>
+
       </div>
     );
   }
