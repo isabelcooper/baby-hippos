@@ -32,10 +32,7 @@ class NewUser extends Component {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
-    }).then(response => {
-      this.setState({ loggedIn: true });
-      console.log(this.state);
-    });
+    }).then(response => {this.setState({ loggedIn: true })  } )
   }
 
   logChange(e) {
@@ -43,25 +40,59 @@ class NewUser extends Component {
   }
 
   render() {
-    const { loggedIn } = this.state;
-    if (loggedIn === true) {
-      return <Redirect to="/spaces" />;
-    } else {
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit} method="POST">
-            <label>Name</label>
-            <input type="text" onChange={this.logChange} name="name" />
-            <label>Email</label>
-            <input type="text" onChange={this.logChange} name="email" />
-            <label>Password</label>
-            <input type="text" onChange={this.logChange} name="password" />
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
-      );
-    }
+    const { loggedIn } = this.state
+      if (loggedIn === true) {
+        return <Redirect to="/spaces" />;
+      } else {
+
+        return (
+          <div>
+            <h2> Sign Up </h2>
+            <form onSubmit={this.handleSubmit} method="POST">
+              <fieldset>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter name"
+                    name="name"
+                    onChange={this.logChange}
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter email"
+                    name="email"
+                    onChange={this.logChange}
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    name="password"
+                    onChange={this.logChange}
+                  />
+                </div>
+
+                <input type="submit" value="Submit" class="btn btn-primary" />
+
+              </fieldset>
+            </form>
+
+
+          </div>
+        );
+
+
+      }
   }
 }
 
-export default NewUser;
+export default NewUser

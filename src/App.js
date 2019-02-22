@@ -5,7 +5,7 @@ import "./App.css";
 import SpacesContainer from "./components/SpacesContainer"
 import Login from "./components/login";
 import NewUser from "./components/signUp";
-
+import "./styling/lumen-bootstrap.css";
 
 class App extends Component {
   constructor(props) {
@@ -14,8 +14,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h2> Welcome to the baby hippo thingy</h2>
+      <div style={{margin: "50px"}}>
+
+        <h1> Baby Hippo BnB</h1>
         <Switch>
           <div>
             <Route exact path="/" component={Login} />
