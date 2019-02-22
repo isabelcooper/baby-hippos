@@ -5,6 +5,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import "../styling/lumen-bootstrap.css";
 
 class Login extends Component {
   constructor(props) {
@@ -49,26 +50,38 @@ class Login extends Component {
     } else {
       return (
         <div>
+          <h2> Log In </h2>
           <form onSubmit={this.handleSubmit}>
-            Email: <br />
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-            Password: <br />
-            <input
-              type="text"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <input type="submit" value="Submit" />
+            <fieldset>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter email"
+                  name="email"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+              </div>
+
+              <input type="submit" value="Submit" class="btn btn-primary" />
+              <button class="btn btn-outline-warning">
+                <Link to={`/users/new`}>Sign Up</Link>
+              </button>
+            </fieldset>
           </form>
-          <button>
-            <Link to={`/users/new`}>Sign Up</Link>
-          </button>
+
+
         </div>
       );
     }
