@@ -16,6 +16,7 @@ class SingleSpace extends Component {
     fetch(`http://localhost:5000/spaces/${id}`)
       .then(response => response.json())
       .then(space => {
+        console.log(localStorage.getItem('id'))
         this.setState({ space: space[0] });
       });
   }
@@ -42,7 +43,7 @@ class SingleSpace extends Component {
           </div>
           <div>
             <button>
-              <Link to={'/spaces'}>Back to the spaces!</Link>
+              <Link to={"/spaces"}>Back to the spaces!</Link>
             </button>
           </div>
         </div>

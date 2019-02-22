@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-
 class NewSpace extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +21,8 @@ class NewSpace extends Component {
       ppn: this.state.ppn,
       location: this.state.location,
       bedrooms: this.state.bedrooms,
-      beds: this.state.beds
+      beds: this.state.beds,
+      host: localStorage.getItem('id')
     };
     fetch(`http://localhost:5000/spaces/new`, {
       method: "POST",
