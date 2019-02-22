@@ -32,9 +32,10 @@ class Login extends Component {
       .then(response => response.json())
       .then(user => {
         if (user.length > 0) {
+          if (this.state.password === user[0].password) {
           this.setState({ redirect: true });
         }
-      });
+      }});
   }
 
   render() {

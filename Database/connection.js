@@ -37,7 +37,6 @@ const getUserById = (request, response) => {
 }
 
 const getUserByEmail = (request, response) => {
-  console.log(request.params.email)
   const email = request.params.email
   pool.query('SELECT * FROM users WHERE email = $1', [email], (error, results) => {
     if (error) {
