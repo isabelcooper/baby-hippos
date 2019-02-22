@@ -33,9 +33,12 @@ class Login extends Component {
       .then(user => {
         if (user.length > 0) {
           if (this.state.password === user[0].password) {
-          this.setState({ redirect: true });
+            this.setState({ redirect: true });
+            localStorage.setItem('id', user[0].id)
+
+          }
         }
-      }});
+      });
   }
 
   render() {

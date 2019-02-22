@@ -67,15 +67,16 @@ const getSpaceById = (request, response) => {
 }
 
 const createSpace = (request, response) => {
-  const { name, description, ppn, location, bedrooms, beds } = request.body
+  const { name, description, ppn, location, bedrooms, beds, host } = request.body
 
-  pool.query(`INSERT INTO spaces (name, description, ppn, location, bedrooms, beds) VALUES (
+  pool.query(`INSERT INTO spaces (name, description, ppn, location, bedrooms, beds, host) VALUES (
     '${name}',
     '${description}',
     '${ppn}',
     '${location}',
     '${bedrooms}',
-    '${beds}')`,
+    '${beds}',
+    '${host}')`,
     (error, results) => {
     if (error) {
       throw error

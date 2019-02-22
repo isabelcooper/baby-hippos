@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Switch, Router, Route, Link } from "react-router-dom";
 import SingleSpace from "./singleSpace";
 import Spaces from "./spaces";
-import NewSpace from "./newSpace"
+import NewSpace from "./newSpace";
 
 class SpacesContainer extends Component {
   render() {

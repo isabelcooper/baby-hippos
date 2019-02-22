@@ -11,54 +11,57 @@ class NewUser extends Component {
     super(props);
 
     this.state = {
-      name: '',
-      email: '',
-      password: '',
+      name: "",
+      email: "",
+      password: "",
       loggedIn: false
     };
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.logChange = this.logChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.logChange = this.logChange.bind(this);
   }
 
   handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
     var data = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password
-    }
-    console.log(data)
-    fetch('http://localhost:5000/users/new', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+    };
+    console.log(data);
+    fetch("http://localhost:5000/users/new", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
-    }).then(response => {this.setState({ loggedIn: true }); console.log(this.state) }  )
+    }).then(response => {
+      this.setState({ loggedIn: true });
+      console.log(this.state);
+    });
   }
 
   logChange(e) {
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
-    const { loggedIn } = this.state
-      if (loggedIn === true) {
-        return <Redirect to="/spaces" />;
-      } else {
-        return (
-          <div>
-            <form onSubmit={this.handleSubmit} method="POST">
-              <label>Name</label>
-                  <input type="text" onChange={this.logChange} name='name'/>
-              <label>Email</label>
-                  <input type="text" onChange={this.logChange} name='email'/>
-              <label>Password</label>
-                  <input type="text" onChange={this.logChange} name='password'/>
-              <input type="submit" value="Submit" />
-            </form>
-          </div>
-        );
-      }
+    const { loggedIn } = this.state;
+    if (loggedIn === true) {
+      return <Redirect to="/spaces" />;
+    } else {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit} method="POST">
+            <label>Name</label>
+            <input type="text" onChange={this.logChange} name="name" />
+            <label>Email</label>
+            <input type="text" onChange={this.logChange} name="email" />
+            <label>Password</label>
+            <input type="text" onChange={this.logChange} name="password" />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      );
+    }
   }
 }
 
-export default NewUser
+export default NewUser;
