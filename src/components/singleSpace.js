@@ -6,7 +6,8 @@ class SingleSpace extends Component {
     super(props);
 
     this.state = {
-      space: []
+      space: [],
+      user: []
     };
   }
 
@@ -16,15 +17,20 @@ class SingleSpace extends Component {
     fetch(`http://localhost:5000/spaces/${id}`)
       .then(response => response.json())
       .then(space => {
-        console.log(localStorage.getItem('id'))
         this.setState({ space: space[0] });
+        fetch(`http://localhost:5000/users/${space[0].host}`)
+          .then(response => response.json())
+          .then(user => {
+            this.setState({ user: user[0] });
+          });
       });
   }
 
   render() {
     const { space } = this.state;
+    const { user } = this.state;
 
-    if (space != []) {
+    if (space !== [] && user !== []) {
       return (
         <div>
           <div>
@@ -40,6 +46,8 @@ class SingleSpace extends Component {
             <p>{space.bedrooms}</p>
             <h3>Beds:</h3>
             <p>{space.beds}</p>
+            <h3>Host:</h3>
+            <p>{user.name}</p>
           </div>
           <div>
             <button>

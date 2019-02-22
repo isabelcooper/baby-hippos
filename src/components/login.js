@@ -79,6 +79,7 @@ class Login extends Component {
                   class="form-control"
                   name="password"
                   placeholder="Password"
+                  name="password"
                   onChange={this.handleChange}
                 />
               </div>
