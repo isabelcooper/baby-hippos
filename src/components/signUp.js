@@ -42,7 +42,7 @@ class NewUser extends Component {
   render() {
     const { loggedIn } = this.state
       if (loggedIn === true) {
-        return <Redirect to="/spaces" />;
+        return <Redirect to="/" />;
       } else {
 
         return (
