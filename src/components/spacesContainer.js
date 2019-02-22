@@ -14,9 +14,6 @@ class SpacesContainer extends Component {
             <Route exact path="/spaces" component={Spaces} />
             <Route path="/spaces/:id" component={SingleSpace} />
             <Route path="/new" component={NewSpace} />
-            <button>
-              <Link to={`/new`}>Adda Space!</Link>
-            </button>
           </div>
         </Switch>
       </div>

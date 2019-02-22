@@ -19,17 +19,26 @@ class Spaces extends Component {
   }
   render() {
     const { spaces } = this.state;
-    return spaces.map(eachSpace => {
-      return (
+    return (
+      <div>
         <div>
-          <h1>{eachSpace.name}</h1>
-          <p>{eachSpace.location}</p>
           <button>
-            <Link to={`/spaces/${eachSpace.id}`}>View This Space!</Link>
+            <Link to={`/new`}>Add a Space!</Link>
           </button>
         </div>
-      );
-    });
+        {spaces.map(eachSpace => {
+          return (
+            <div>
+              <h1>{eachSpace.name}</h1>
+              <p>{eachSpace.location}</p>
+              <button>
+                <Link to={`/spaces/${eachSpace.id}`}>View This Space!</Link>
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
